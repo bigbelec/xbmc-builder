@@ -5,7 +5,7 @@ Build scripts for XBMC and related packages.
 
 forked from AndreyPavlenko/xbmc-builder
 
-№ Создаем директории:
+№ Создаем директории
 
  mkdir $HOME/ppa
 
@@ -17,31 +17,27 @@ forked from AndreyPavlenko/xbmc-builder
 
  exit
 
-#  Клонируем билд скрипты:
+#  Клонируем билд скрипты
 
  mkdir -p $HOME/ppa/builders/xbmc-builder
 
  git clone https://github.com/AndreyPavlenko/xbmc-builder.git $HOME/ppa/builders/xbmc-builder
 
-# Cоздаём в домашней директории конфигурационный файл :
+# Cоздаём в домашней директории конфигурационный файл 
 
 sudo nano  ~/.build.config
 
-В этом файле нужно прописать настройки :
+В этом файле нужно прописать настройки 
 
 GPGKEY='ключ в РРА' 
 
-DEBEMAIL='имя <e-mail>' указываем данные в РРА 
+DEBEMAIL='andrey.a.pavlenko@gmail.com'
 
-например такие данные РРА: aap <andrey.a.pavlenko@gmail.com>
-
-PPA_URL='ссылка на рра и ветка куда отправлять собранные source.changes'
-
-например 'https://launchpad.net/~aap/+archive/xbmc-fernetmenta'
+PPA_URL='https://launchpad.net/~aap/+archive/xbmc-fernetmenta'
 
 TARGET_PLATFORMS='precise:amd64 quantal:amd64 raring:amd64 saucy:amd64'
 
-указываем платформы убунт для сборки (i386 по умолчанию)
+
 
 : ${MAINTAINER:="$DEBEMAIL"}
 
@@ -59,13 +55,13 @@ TARGET_PLATFORMS='precise:amd64 quantal:amd64 raring:amd64 saucy:amd64'
 
 : ${DEB_MIRROR:='http://ru.archive.ubuntu.com/ubuntu'}
 
-# устанавливаем утилиту dput,
+# устанавливаем утилиту dput
 
 # создаём dput.cf в домашней директории файл для отправки пакетов в РРА
 
 sudo nano  ~/dput.cf
 
-# заполняем :
+# заполняем 
 
 [frodo] 
 
@@ -87,7 +83,7 @@ cd $HOME/ppa/builders/xbmc-builder/xbmc
 
 TARGET_PLATFORMS='precise:amd64 quantal:amd64 raring:amd64 saucy:amd64' ./build.sh create
 
-# Отправляем в РРА 6
+# Отправляем в РРА 
 
 PPA=рра_указанный_в_build.config ./build.sh upload
 
