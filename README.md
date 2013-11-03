@@ -91,6 +91,12 @@ TARGET_PLATFORMS='precise:amd64 quantal:amd64 raring:amd64 saucy:amd64' ./build.
 
 PPA=рра_указанный_в_build.config ./build.sh upload
 
+# В следующий раз перед сборкой yдали source хбмс
+
+cd ~/ppa/sources
+
+rm -r xbmc
+
 ## Если имеется, то делаем предподготовку в своём github:
 
 git clone https://github.com/bigbelec/xbmc.git
