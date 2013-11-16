@@ -5,7 +5,7 @@ Build scripts for XBMC and related packages.
 
 forked from AndreyPavlenko/xbmc-builder
 
-№ Создаем директории
+# Создаем директории
 
  mkdir $HOME/ppa
 
@@ -27,7 +27,7 @@ forked from AndreyPavlenko/xbmc-builder
 
 sudo nano  ~/.build.config
 
-В этом файле нужно прописать настройки 
+## В этом файле нужно прописать настройки 
 
 GPGKEY='ключ в РРА' 
 
